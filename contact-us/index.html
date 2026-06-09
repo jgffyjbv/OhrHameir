@@ -12,7 +12,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Flatsome Core CSS -->
     <link rel="stylesheet" href="/wp-content/themes/flatsome/assets/css/flatsome.css?ver=3.17.7">
@@ -77,35 +77,99 @@
         .absolute-footer a{color:#aaa;text-decoration:underline;}
         .absolute-footer h6{font-size:0.7em;font-weight:400;color:#bbb;}
 
-        /* === Contact Form === */
-        .contact-section{padding:60px 20px;background:#fafafa;}
-        .contact-card{max-width:680px;margin:0 auto;background:#fff;border-radius:16px;padding:50px 40px;box-shadow:0 2px 24px rgba(0,0,0,0.06);}
-        @media(max-width:549px){.contact-card{padding:30px 20px;}}
-        .contact-card .form-title{text-align:center;font-size:28px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
-        .contact-card .form-subtitle{text-align:center;font-size:15px;color:#777;margin-bottom:35px;}
-        .form-group{margin-bottom:22px;}
-        .form-group label{display:block;font-size:13px;font-weight:600;color:#444;margin-bottom:6px;text-transform:uppercase;}
+        /* ============================================================
+           CONTACT — "New Light" (dawn breaking over dusk)
+           ============================================================ */
+        .contact-section{position:relative;padding:66px 20px 100px;background:#fdf7ef;overflow:hidden;}
+        .contact-section:before{content:"";position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:820px;height:520px;background:radial-gradient(ellipse at center,rgba(246,144,29,0.15),rgba(246,144,29,0) 70%);pointer-events:none;}
+
+        .contact-head{position:relative;text-align:center;max-width:640px;margin:0 auto 42px;}
+        .contact-head .eyebrow{font-family:"Dancing Script",cursive;font-weight:700;font-size:31px;color:#e07d0f;line-height:1;}
+        .contact-head h1{font-family:Montserrat,sans-serif;font-weight:600;font-size:46px;line-height:1.08;color:#1a1a1a;margin:8px 0 16px;}
+        .contact-head p{font-size:16px;line-height:1.65;color:#6f6a62;margin:0;}
+
+        .contact-card{position:relative;max-width:990px;margin:0 auto;background:#fff;border-radius:24px;overflow:hidden;
+            box-shadow:0 34px 70px -28px rgba(40,30,12,0.34),0 2px 8px rgba(0,0,0,0.05);
+            display:flex;flex-wrap:wrap;}
+
+        /* --- left dusk panel with dawn glow --- */
+        .contact-aside{position:relative;flex:1 1 330px;min-width:290px;padding:50px 42px;color:#fff;background:#1b2738;overflow:hidden;}
+        .contact-aside:before{content:"";position:absolute;top:-130px;left:-90px;width:360px;height:360px;border-radius:50%;
+            background:radial-gradient(circle at 35% 35%,rgba(248,162,58,0.60),rgba(246,144,29,0.18) 46%,rgba(246,144,29,0) 72%);pointer-events:none;}
+        .contact-aside:after{content:"";position:absolute;bottom:-120px;right:-100px;width:320px;height:320px;border-radius:50%;
+            background:radial-gradient(circle,rgba(104,168,221,0.28),rgba(104,168,221,0) 70%);pointer-events:none;}
+        .aside-inner{position:relative;}
+        .aside-eyebrow{font-family:"Dancing Script",cursive;font-weight:600;font-size:28px;line-height:1;color:#f8b25a;}
+        .contact-aside h2{font-family:Montserrat,sans-serif;font-weight:600;font-size:25px;line-height:1.3;margin:8px 0 16px;color:#fff;}
+        .aside-msg{font-size:15px;line-height:1.7;color:#dfe4ea;margin:0 0 34px;}
+        .contact-methods{display:flex;flex-direction:column;gap:18px;}
+        .contact-methods a{display:flex;align-items:center;gap:14px;color:#fff;text-decoration:none;font-size:14.5px;line-height:1.4;transition:transform .2s ease;}
+        .contact-methods a:hover{transform:translateX(3px);}
+        .contact-methods a:hover .cm-text{color:#f8b25a;}
+        .contact-methods i{flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+            background:rgba(248,162,58,0.16);color:#f8b25a;font-size:16px;}
+        .cm-text{transition:color .2s ease;}
+        .cm-label{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:#9aa6b4;margin-bottom:2px;}
+
+        /* --- right form panel --- */
+        .contact-form-panel{flex:1.3 1 390px;min-width:300px;padding:50px 46px;background:#fff;}
+        .contact-form-panel .form-title{font-family:Montserrat,sans-serif;font-size:23px;font-weight:600;color:#1a1a1a;margin:0 0 4px;}
+        .contact-form-panel .form-subtitle{font-size:14px;color:#8a857d;margin:0 0 28px;}
+
+        .form-group{margin-bottom:20px;}
+        .form-group label{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;color:#555;margin-bottom:7px;text-transform:uppercase;}
+        .form-group .optional{text-transform:none;font-weight:400;color:#b3ada3;letter-spacing:0;}
         .form-group input,
-        .form-group textarea{width:100%;padding:14px 16px;border:2px solid #e8e8e8;border-radius:10px;font-size:15px;font-family:Montserrat,sans-serif;color:#1a1a1a;background:#fafafa;transition:border-color 0.25s ease,box-shadow 0.25s ease,background 0.25s ease;outline:none;box-sizing:border-box;}
+        .form-group textarea{width:100%;padding:13px 15px;border:1.5px solid #e8e3da;border-radius:11px;font-size:15px;
+            font-family:Montserrat,sans-serif;color:#1a1a1a;background:#fbf9f5;
+            transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;outline:none;box-sizing:border-box;}
+        .form-group input::placeholder,.form-group textarea::placeholder{color:#b6afa4;}
         .form-group input:focus,
-        .form-group textarea:focus{border-color:#f6901d;background:#fff;box-shadow:0 0 0 4px rgba(246,144,29,0.08);}
+        .form-group textarea:focus{border-color:#f6901d;background:#fff;box-shadow:0 0 0 4px rgba(246,144,29,0.12);}
         .form-group textarea{resize:vertical;min-height:130px;}
 
-        /* Consent checkbox */
-        .consent-group label{display:flex;align-items:flex-start;gap:10px;font-weight:400!important;text-transform:none!important;font-size:13px!important;line-height:1.5;color:#444;cursor:pointer;}
-        .consent-group input[type="checkbox"]{width:auto;margin-top:3px;accent-color:#f6901d;flex-shrink:0;}
-        .consent-group a{color:#f6901d;text-decoration:underline;}
+        /* consent checkbox */
+        .consent-group{margin-top:6px;}
+        .consent-group label{display:flex;align-items:flex-start;gap:11px;font-weight:400!important;text-transform:none!important;
+            letter-spacing:0!important;font-size:12.5px!important;line-height:1.55;color:#6f6a62;cursor:pointer;margin-bottom:0;}
+        .consent-group input[type="checkbox"]{width:auto;margin-top:2px;accent-color:#f6901d;flex-shrink:0;transform:scale(1.05);}
+        .consent-group a{color:#e07d0f;text-decoration:underline;}
 
-        .submit-btn{display:inline-block;background-color:#f6901d;color:#fff;border:none;padding:14px 48px;border-radius:99px;font-size:16px;font-weight:600;font-family:Montserrat,sans-serif;cursor:pointer;transition:background-color 0.25s ease,transform 0.2s ease,box-shadow 0.25s ease;letter-spacing:0.3px;}
-        .submit-btn:hover{background-color:#e07d0f;transform:translateY(-1px);box-shadow:0 6px 20px rgba(246,144,29,0.3);}
-        .submit-btn:active{transform:translateY(0);box-shadow:0 2px 8px rgba(246,144,29,0.2);}
-        .submit-wrapper{text-align:center;margin-top:10px;}
+        .submit-wrapper{margin-top:26px;}
+        .submit-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;
+            background:linear-gradient(135deg,#f8a23a,#f6901d);color:#fff;border:none;padding:15px 40px;border-radius:99px;
+            font-size:16px;font-weight:600;font-family:Montserrat,sans-serif;cursor:pointer;letter-spacing:.2px;
+            box-shadow:0 12px 26px -10px rgba(246,144,29,0.7);transition:transform .18s ease,box-shadow .25s ease,filter .2s ease;}
+        .submit-btn:hover{transform:translateY(-2px);box-shadow:0 18px 32px -10px rgba(246,144,29,0.7);filter:brightness(1.03);}
+        .submit-btn:active{transform:translateY(0);}
+        .submit-btn:disabled{opacity:.7;cursor:default;transform:none;box-shadow:none;}
 
-        /* Success message */
-        .form-success{display:none;text-align:center;color:#2e7d32;background:#e8f5e9;border:1px solid #c8e6c9;border-radius:10px;padding:20px;margin-top:20px;font-weight:500;}
+        .form-success{display:none;text-align:center;color:#2e7d32;background:#edf7ee;border:1px solid #cfe9d1;border-radius:12px;
+            padding:24px;margin-top:8px;font-weight:500;font-size:15px;line-height:1.55;}
+
+        /* entrance + a11y */
+        @keyframes contactRise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+        .contact-head{animation:contactRise .6s cubic-bezier(.22,.61,.36,1) both;}
+        .contact-card{animation:contactRise .75s cubic-bezier(.22,.61,.36,1) .08s both;}
+        a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #446084;outline-offset:2px;}
+
+        @media(max-width:860px){
+            .contact-card{flex-direction:column;}
+            .contact-aside{padding:42px 34px;}
+            .contact-form-panel{padding:40px 32px;}
+        }
+        @media(max-width:549px){
+            .contact-section{padding:48px 16px 72px;}
+            .contact-head h1{font-size:34px;}
+            .contact-aside{padding:34px 26px;}
+            .contact-form-panel{padding:32px 22px;}
+        }
+        @media(prefers-reduced-motion:reduce){
+            .contact-head,.contact-card{animation:none;}
+            .submit-btn,.contact-methods a,.form-group input,.form-group textarea,.cm-text{transition:none;}
+        }
 
         @media(max-width:789px){
-            .conn_heaven h2{font-size:38px}
             .footer_txt_links .ux-menu-link__text{font-size:11px}
             .icon-phone:before,.icon-map-pin-fill:before,.icon-envelop:before{font-size:15px!important}
         }
@@ -177,67 +241,80 @@
                 <div class="large-12 col">
                     <div class="col-inner">
 
-                        <div style="padding-top:50px;"></div>
+                        <!-- ========== CONTACT: "New Light" ========== -->
+                        <section class="contact-section">
 
-                        <!-- Title -->
-                        <section class="section">
-                            <div class="section-content relative">
-                                <div class="row">
-                                    <div class="col small-12 large-12">
-                                        <div class="col-inner">
-                                            <div style="text-align:center;">
-                                                <h2 style="color:#f6901d;font-size:48px;font-weight:600;">Haven of Connection</h2>
-                                            </div>
+                            <div class="contact-head">
+                                <div class="eyebrow">we're so glad you're here</div>
+                                <h1>Haven of Connection</h1>
+                                <p>Reaching out is the first light. Send a note and someone from Ohr Chodosh will be in touch — gently, and on your terms.</p>
+                            </div>
+
+                            <div class="contact-card" id="contactFormCard">
+
+                                <!-- left dusk panel -->
+                                <aside class="contact-aside">
+                                    <div class="aside-inner">
+                                        <div class="aside-eyebrow">Reach out</div>
+                                        <h2>You don't have to carry it alone.</h2>
+                                        <p class="aside-msg">However you found your way here, we're glad you did. Tell us what's on your heart, or just say hello — our hands are extended, and our hearts are already with you.</p>
+
+                                        <div class="contact-methods">
+                                            <a href="https://maps.google.com/?q=713+Bedford+Ave,+Brooklyn,+NY+11206" target="_blank" rel="noopener">
+                                                <i class="icon-map-pin-fill"></i>
+                                                <span class="cm-text"><span class="cm-label">Visit</span>713 Bedford Ave, Brooklyn, NY 11206</span>
+                                            </a>
+                                            <a href="tel:7183056722">
+                                                <i class="icon-phone"></i>
+                                                <span class="cm-text"><span class="cm-label">Call</span>(718) 305-6722</span>
+                                            </a>
+                                            <a href="mailto:admin@ohrchodoshorg.org">
+                                                <i class="icon-envelop"></i>
+                                                <span class="cm-text"><span class="cm-label">Email</span>admin@ohrchodoshorg.org</span>
+                                            </a>
                                         </div>
                                     </div>
+                                </aside>
+
+                                <!-- right form panel -->
+                                <div class="contact-form-panel">
+                                    <div class="form-title">Send a message</div>
+                                    <div class="form-subtitle">We read every one. Replies usually come within a day or two.</div>
+
+                                    <form id="contactForm" action="https://www.saveform.io/api/submit/0ad82a23-61c5-4a1e-9d26-e363cd4e8001" method="POST">
+                                        <div class="form-group">
+                                            <label for="name">Your name</label>
+                                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Your email</label>
+                                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Your phone <span class="optional">(optional)</span></label>
+                                            <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help…" required></textarea>
+                                        </div>
+
+                                        <!-- ========== SMS CONSENT (10DLC) — opt-in, not required ========== -->
+                                        <div class="form-group consent-group">
+                                            <label>
+                                                <input type="checkbox" name="sms_consent">
+                                                <span>By checking this box, I agree to receive SMS messages from Ohr Chodosh about program updates, event notifications, donation confirmations, volunteer coordination, member/account notifications, and other nonprofit-related communications. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out. View our <a href="/privacy-policy.html">Privacy Policy</a></span>
+                                            </label>
+                                        </div>
+
+                                        <div class="submit-wrapper">
+                                            <button type="submit" class="submit-btn" id="submitBtn">Send message</button>
+                                        </div>
+
+                                        <div class="form-success" id="formSuccess">Message sent. Thank you for reaching out — we'll be in touch soon.</div>
+                                    </form>
                                 </div>
-                            </div>
-                        </section>
 
-                        <!-- ========== CONTACT FORM with SMS CONSENT + PRIVACY LINK ========== -->
-                        <section class="contact-section">
-                            <div class="contact-card" id="contactFormCard">
-                                <div class="form-title">Get in Touch</div>
-                                <div class="form-subtitle">Reach out and extend our hands to you. Our hearts are with you already.</div>
-
-                                <!-- ✅ NEW SAVEFORM.IO ENDPOINT -->
-                                <form id="contactForm" action="https://www.saveform.io/api/submit/0ad82a23-61c5-4a1e-9d26-e363cd4e8001" method="POST">
-                                    <div class="form-group">
-                                        <label for="name">Your Name *</label>
-                                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Your Email *</label>
-                                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">Your Phone (optional)</label>
-                                        <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Message *</label>
-                                        <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
-                                    </div>
-
-                                    <!-- ========== SMS CONSENT CHECKBOX (10DLC COMPLIANT) ========== -->
-                                    <div class="form-group consent-group">
-                                        <label>
-                                            <input type="checkbox" name="sms_consent" required>
-                                            <span>
-                                                By providing your phone number, you agree to receive SMS communications from Ohr Chodosh at the phone number provided. These may include transactional messages, order status updates, and delivery notifications. Message frequency may vary. Message and data rates may apply. You can opt out at any time by replying STOP. For assistance, reply HELP. Read our <a href="/privacy-policy.html">Privacy Policy</a> for more details.
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="submit-wrapper">
-                                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
-                                    </div>
-
-                                    <!-- Success message (hidden until submitted) -->
-                                    <div class="form-success" id="formSuccess">
-                                        ✅ Thank you! We will contact you shortly.
-                                    </div>
-                                </form>
                             </div>
                         </section>
 
@@ -247,7 +324,7 @@
         </div>
     </main>
 
-    <!-- FOOTER (subtle, no yellow bar) -->
+    <!-- FOOTER -->
     <footer id="footer" class="footer-wrapper">
         <section class="section" style="min-height:450px;">
             <div class="bg section-bg fill bg-fill bg-loaded" style="background-image:url(/wp-content/uploads/2024/04/Rectangle-19-1.png);"></div>
@@ -292,10 +369,9 @@
             </div>
         </section>
 
-        <!-- Subtle bottom bar -->
         <div class="absolute-footer" style="background:#fff; color:#aaa; padding:15px 0 10px; text-align:center;">
             <div class="container">
-                <h6 style="font-size:0.7em; font-weight:400; color:#bbb;">Designed and Powered by <a href="https://bhwebsolution.com/" style="color:#bbb;">Bhwebsolution</a></h6>
+                <h6 style="font-size:0.7em; font-weight:400; color:#bbb;">Designed and Powered by <a href="https://bhwebsolutions.com/" style="color:#bbb;">Bhwebsolutions</a></h6>
             </div>
         </div>
 
@@ -351,7 +427,7 @@
         var successMsg = document.getElementById('formSuccess');
 
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Sending…';
 
         fetch(form.action, {
             method: 'POST',
@@ -367,15 +443,15 @@
                 }
                 form.reset();
             } else {
-                alert('Oops! Something went wrong. Please try again.');
+                alert('Something went wrong — please try again.');
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
+                submitBtn.textContent = 'Send message';
             }
         })
         .catch(function() {
-            alert('Network error. Please try again.');
+            alert('Network error — please try again.');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
+            submitBtn.textContent = 'Send message';
         });
     });
 </script>

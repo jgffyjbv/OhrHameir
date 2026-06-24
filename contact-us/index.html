@@ -281,7 +281,12 @@
                                     <div class="form-title">Send a message</div>
                                     <div class="form-subtitle">We read every one. Replies usually come within a day or two.</div>
 
-                                    <form id="contactForm" action="https://www.saveform.io/api/submit/0ad82a23-61c5-4a1e-9d26-e363cd4e8001" method="POST">
+                                    <form id="contactForm" action="https://formsubmit.co/ajax/admin@ohrchodoshorg.org" method="POST">
+                                        <!-- Delivers submissions straight to admin@ohrchodoshorg.org via FormSubmit -->
+                                        <input type="hidden" name="_subject" value="New message from the Ohr Chodosh contact form">
+                                        <input type="hidden" name="_template" value="table">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                                         <div class="form-group">
                                             <label for="name">Your name</label>
                                             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
